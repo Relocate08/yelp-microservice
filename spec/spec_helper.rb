@@ -15,6 +15,10 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 ENV['RACK_ENV'] = 'test'
 require "./config/environment"
+require 'capybara/rspec'
+require 'rack/test'
+require 'capybara/dsl'
+
 RSpec.configure do |config|
   config.include Rack::Test::Methods
   config.before(:each) do
