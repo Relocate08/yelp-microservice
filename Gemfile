@@ -15,8 +15,6 @@ gem 'json'
 
 gem 'bundler'
 
-gem 'rest-open-uri'
-
 gem 'sinatra-cross_origin'
 
 gem 'rack-contrib'
