@@ -4,6 +4,12 @@
 GET '/'
 ```
 
+## Utility Search
+
+```
+GET '/utilities/electricity/:location'
+```
+
 ## Name Request
 ```
 GET '/:name'
