@@ -15,8 +15,7 @@ class ApplicationController < Sinatra::Base
     end
     response = conn.get("/v3/businesses/search?categories=electricitysuppliers&location=#{params[:location]}")
     json = JSON.parse(response.body, symbolize_names: true)
-    render json: UtilitySerializer.new(json)
-    # require 'pry'; binding.pry
+    render json: UtilitySerializer.make_json(json)
   end
 
   # get '/:name' do
