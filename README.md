@@ -24,11 +24,28 @@ GET '/'
 }
 ```
 ### Electricity Utility Request
+Request
 ```
-GET ':location/utilities/electricity'
+GET '80211/utilities/electricity'
 ```
+Response
 ```
-{
-  "message": "Welcome hanna"
-}
+{:name=>"Xcel Energy",
+  :image=>"https://s3-media1.fl.yelpcdn.com/bphoto/pDZ8YQ098hOq1RzwbFFyWA/o.jpg",
+  :is_closed=>false,
+  :url=>
+   "https://www.yelp.com/biz/xcel-energy-denver?adjust_creative=zQj4oUhAlRBYo7eV2LOdZA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=zQj4oUhAlRBYo7eV2LOdZA",
+  :review_count=>84,
+  :rating=>1.5,
+  :categories=>["Electricity Suppliers"],
+  :location=>
+   {:address1=>"1099 18th St",
+    :address2=>"Ste 3000",
+    :address3=>"",
+    :city=>"Denver",
+    :zip_code=>"80202",
+    :country=>"US",
+    :state=>"CO"},
+  :phone=>"(800) 895-4999",
+  :distance=>2708.019879293317}
 ```
