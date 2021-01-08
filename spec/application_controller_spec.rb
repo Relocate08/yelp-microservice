@@ -36,7 +36,7 @@ describe ApplicationController do
         expect(biz[:review_count]).to be_a(Integer)
         expect(biz).to have_key(:rating)
         expect(biz[:rating]).to be_a(Float)
-        expect(biz).to have_key(:categories) comment this out bec it is failing th travis build
+        expect(biz).to have_key(:categories)
         expect(biz[:categories]).to be_a(Array)
         expect(biz).to have_key(:location)
         expect(biz[:location]).to be_a(Hash)
