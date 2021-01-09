@@ -9,7 +9,6 @@ describe ApplicationController do
     @data = '{
    "data": [
            {
-           "id": "1",
            "name": "Xcel Energy",
            "image": "https://s3-media1.fl.yelpcdn.com/bphoto/pDZ8YQ098hOq1RzwbFFyWA/o.jpg",
            "is_closed": false,
@@ -32,7 +31,6 @@ describe ApplicationController do
            "distance": 15497.49134034972
        },
        {
-           "id": "2",
            "name": "Mountain Parks Electric",
            "image": "",
            "is_closed": false,
@@ -55,7 +53,6 @@ describe ApplicationController do
            "distance": 68150.46744739878
        },
        {
-           "id": "3",
            "name": "IREA",
            "image": "",
            "is_closed": false,
@@ -89,14 +86,18 @@ describe ApplicationController do
     expect(body[:message]).to include("Welcome to the Yelp Microservice!")
   end
 
+  it "can hit the utilities/electricity endpoint" do
+    location = 80211
+    get "/#{location}/utilities/electricity"
+    expect(last_response).to be_successful
+  end
+
   it 'can parse a response' do
-  json = JSON.parse(@data, symbolize_names: true)
+    json = JSON.parse(@data, symbolize_names: true)
     expect(json).to have_key(:data)
     expect(json[:data]).to be_an(Array)
     utilities = json[:data]
     utilities.each do |biz|
-      expect(biz).to have_key(:id)
-      expect(biz[:id]).to be_an(String)
       expect(biz).to have_key(:name)
       expect(biz[:name]).to be_an(String)
       expect(biz).to have_key(:is_closed)
