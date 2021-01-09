@@ -8,7 +8,8 @@ describe ApplicationController do
   before :each do
     @data = '{
    "data": [
-       {
+           {
+           "id": "1",
            "name": "Xcel Energy",
            "image": "https://s3-media1.fl.yelpcdn.com/bphoto/pDZ8YQ098hOq1RzwbFFyWA/o.jpg",
            "is_closed": false,
@@ -31,6 +32,7 @@ describe ApplicationController do
            "distance": 15497.49134034972
        },
        {
+           "id": "2",
            "name": "Mountain Parks Electric",
            "image": "",
            "is_closed": false,
@@ -53,6 +55,7 @@ describe ApplicationController do
            "distance": 68150.46744739878
        },
        {
+           "id": "3",
            "name": "IREA",
            "image": "",
            "is_closed": false,
