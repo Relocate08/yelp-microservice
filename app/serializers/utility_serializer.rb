@@ -5,7 +5,6 @@ class UtilitySerializer
 		{
 			'data': data[:businesses].map do |biz|
 				{
-					'id': biz[:id],
 					'name': biz[:name],
 					'image': biz[:image_url],
 					'is_closed': biz[:is_closed],
