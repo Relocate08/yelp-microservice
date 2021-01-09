@@ -31,6 +31,19 @@ GET ':location/utilities/water'
 GET ':location/utilities/tv'
 GET ':location/utilities/isps'
 ```
+
+### Recreation Requests
+```
+GET ':location/recreation/gyms'
+GET ':location/recreation/yoga'
+GET ':location/recreation/parks'
+GET ':location/recreation/hiking'
+GET ':location/recreation/recreation'
+GET ':location/recreation/pools'
+GET ':location/recreation/golf'
+GET ':location/recreation/playgrounds'
+
+```
 Example Response for `GET '80211/utilities/electricity'`
 ```
 {:name=>"Xcel Energy",
