@@ -2,7 +2,7 @@
 ## Setup
 Development Site: https://relocate-08-yelp-microservice.herokuapp.com/
 If you have not cloned down the front-end or back-end repos, you can find front-end [here](https://github.com/Relocate08/Relocate08-Front-End-Rails) and back-end [here](https://github.com/Relocate08/Relocate-Back-End-Rails)  
-How to run local host: 
+How to run local host:
 1. Fork and clone this repo: `git clone git@github.com:Relocate08/yelp-microservice.git`
 1. Run `bundle install`
 1. Sign up for a [yelp api key](https://www.yelp.com/developers/documentation/v3/authentication)
@@ -18,17 +18,20 @@ How to run local host:
 ```
 GET '/'
 ```
+Response:
 ```
 {
 "message": "Welcome to the Yelp Microservice!"
 }
 ```
-### Electricity Utility Request
-Request
+### Utility Requests:
 ```
-GET '80211/utilities/electricity'
+GET ':location/utilities/electricity'
+GET ':location/utilities/water'
+GET ':location/utilities/tv'
+GET ':location/utilities/isps'
 ```
-Response
+Example Response for `GET '80211/utilities/electricity'`
 ```
 {:name=>"Xcel Energy",
   :image=>"https://s3-media1.fl.yelpcdn.com/bphoto/pDZ8YQ098hOq1RzwbFFyWA/o.jpg",
