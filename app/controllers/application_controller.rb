@@ -50,75 +50,74 @@ class ApplicationController < Sinatra::Base
   end
   #recreation endpoints
   get '/:location/recreation/gyms' do
-  conn = Faraday.new('https://api.yelp.com') do |f|
-    f.headers['Authorization'] = ENV['YELP_API_KEY']
+    conn = Faraday.new('https://api.yelp.com') do |f|
+      f.headers['Authorization'] = ENV['YELP_API_KEY']
+    end
+    response = conn.get("/v3/businesses/search?categories=gyms&location=#{params[:location]}")
+    parsed_json = JSON.parse(response.body, symbolize_names: true)
+    BusinessSerializer.make_json(parsed_json).to_json
   end
-  response = conn.get("/v3/businesses/search?categories=gyms&location=#{params[:location]}")
-  parsed_json = JSON.parse(response.body, symbolize_names: true)
-  BusinessSerializer.make_json(parsed_json).to_json
-end
 
-get '/:location/recreation/yoga' do
-  conn = Faraday.new('https://api.yelp.com') do |f|
-    f.headers['Authorization'] = ENV['YELP_API_KEY']
+  get '/:location/recreation/yoga' do
+    conn = Faraday.new('https://api.yelp.com') do |f|
+      f.headers['Authorization'] = ENV['YELP_API_KEY']
+    end
+    response = conn.get("/v3/businesses/search?categories=yoga&location=#{params[:location]}")
+    parsed_json = JSON.parse(response.body, symbolize_names: true)
+    BusinessSerializer.make_json(parsed_json).to_json
   end
-  response = conn.get("/v3/businesses/search?categories=yoga&location=#{params[:location]}")
-  parsed_json = JSON.parse(response.body, symbolize_names: true)
-  BusinessSerializer.make_json(parsed_json).to_json
-end
 
-get '/:location/recreation/parks' do
-  conn = Faraday.new('https://api.yelp.com') do |f|
-    f.headers['Authorization'] = ENV['YELP_API_KEY']
+  get '/:location/recreation/parks' do
+    conn = Faraday.new('https://api.yelp.com') do |f|
+      f.headers['Authorization'] = ENV['YELP_API_KEY']
+    end
+    response = conn.get("/v3/businesses/search?categories=parks&location=#{params[:location]}")
+    parsed_json = JSON.parse(response.body, symbolize_names: true)
+    BusinessSerializer.make_json(parsed_json).to_json
   end
-  response = conn.get("/v3/businesses/search?categories=parks&location=#{params[:location]}")
-  parsed_json = JSON.parse(response.body, symbolize_names: true)
-  BusinessSerializer.make_json(parsed_json).to_json
-end
 
-get '/:location/recreation/hiking' do
-  conn = Faraday.new('https://api.yelp.com') do |f|
-    f.headers['Authorization'] = ENV['YELP_API_KEY']
+  get '/:location/recreation/hiking' do
+    conn = Faraday.new('https://api.yelp.com') do |f|
+      f.headers['Authorization'] = ENV['YELP_API_KEY']
+    end
+    response = conn.get("/v3/businesses/search?categories=hiking&location=#{params[:location]}")
+    parsed_json = JSON.parse(response.body, symbolize_names: true)
+    BusinessSerializer.make_json(parsed_json).to_json
   end
-  response = conn.get("/v3/businesses/search?categories=hiking&location=#{params[:location]}")
-  parsed_json = JSON.parse(response.body, symbolize_names: true)
-  BusinessSerializer.make_json(parsed_json).to_json
-end
 
-get '/:location/recreation/recreation' do
-  conn = Faraday.new('https://api.yelp.com') do |f|
-    f.headers['Authorization'] = ENV['YELP_API_KEY']
+  get '/:location/recreation/recreation' do
+    conn = Faraday.new('https://api.yelp.com') do |f|
+      f.headers['Authorization'] = ENV['YELP_API_KEY']
+    end
+    response = conn.get("/v3/businesses/search?categories=recreation&location=#{params[:location]}")
+    parsed_json = JSON.parse(response.body, symbolize_names: true)
+    BusinessSerializer.make_json(parsed_json).to_json
   end
-  response = conn.get("/v3/businesses/search?categories=recreation&location=#{params[:location]}")
-  parsed_json = JSON.parse(response.body, symbolize_names: true)
-  BusinessSerializer.make_json(parsed_json).to_json
-end
 
-get '/:location/recreation/pools' do
-  conn = Faraday.new('https://api.yelp.com') do |f|
-    f.headers['Authorization'] = ENV['YELP_API_KEY']
+  get '/:location/recreation/pools' do
+    conn = Faraday.new('https://api.yelp.com') do |f|
+      f.headers['Authorization'] = ENV['YELP_API_KEY']
+    end
+    response = conn.get("/v3/businesses/search?categories=swimmingpools&location=#{params[:location]}")
+    parsed_json = JSON.parse(response.body, symbolize_names: true)
+    BusinessSerializer.make_json(parsed_json).to_json
   end
-  response = conn.get("/v3/businesses/search?categories=swimmingpools&location=#{params[:location]}")
-  parsed_json = JSON.parse(response.body, symbolize_names: true)
-  BusinessSerializer.make_json(parsed_json).to_json
-end
 
-get '/:location/recreation/golf' do
-  conn = Faraday.new('https://api.yelp.com') do |f|
-    f.headers['Authorization'] = ENV['YELP_API_KEY']
+  get '/:location/recreation/golf' do
+    conn = Faraday.new('https://api.yelp.com') do |f|
+      f.headers['Authorization'] = ENV['YELP_API_KEY']
+    end
+    response = conn.get("/v3/businesses/search?categories=golf&location=#{params[:location]}")
+    parsed_json = JSON.parse(response.body, symbolize_names: true)
+    BusinessSerializer.make_json(parsed_json).to_json
   end
-  response = conn.get("/v3/businesses/search?categories=golf&location=#{params[:location]}")
-  parsed_json = JSON.parse(response.body, symbolize_names: true)
-  BusinessSerializer.make_json(parsed_json).to_json
-end
 
-get '/:location/recreation/playgrounds' do
-  conn = Faraday.new('https://api.yelp.com') do |f|
-    f.headers['Authorization'] = ENV['YELP_API_KEY']
+  get '/:location/recreation/playgrounds' do
+    conn = Faraday.new('https://api.yelp.com') do |f|
+      f.headers['Authorization'] = ENV['YELP_API_KEY']
+    end
+    response = conn.get("/v3/businesses/search?categories=playgrounds&location=#{params[:location]}")
+    parsed_json = JSON.parse(response.body, symbolize_names: true)
+    BusinessSerializer.make_json(parsed_json).to_json
   end
-  response = conn.get("/v3/businesses/search?categories=playgrounds&location=#{params[:location]}")
-  parsed_json = JSON.parse(response.body, symbolize_names: true)
-  BusinessSerializer.make_json(parsed_json).to_json
-end
-
 end
