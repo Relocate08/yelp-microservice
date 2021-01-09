@@ -4,7 +4,6 @@ class UtilitySerializer
 	def self.make_json(data)
 		{
 			'data': data[:businesses].map do |biz|
-				binding.pry
 				{
 					'id': biz[:id],
 					'name': biz[:name],

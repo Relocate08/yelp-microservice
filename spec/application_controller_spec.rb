@@ -14,7 +14,7 @@ describe ApplicationController do
     expect(body[:message]).to include("Welcome to the Yelp Microservice!")
   end
 
-  xit 'can get utility data' do
+  it 'can get utility data' do
     location = 80211
     get "/#{location}/utilities/electricity"
     expect(last_response).to be_successful
@@ -24,6 +24,8 @@ describe ApplicationController do
     expect(json[:data]).to be_an(Array)
     utilities = json[:data]
     utilities.each do |biz|
+        expect(biz).to have_key(:id)
+        expect(biz[:id]).to be_an(String)
         expect(biz).to have_key(:name)
         expect(biz[:name]).to be_an(String)
         expect(biz).to have_key(:is_closed)
