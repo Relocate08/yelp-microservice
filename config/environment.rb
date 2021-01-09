@@ -8,3 +8,8 @@ require "active_support/all"
 $db = []
 
 require_rel '../app'
+
+# require_relative 'app/controllers/utilities_controller'
+#
+# use UtilitiesController
+# run UtilitiesController
