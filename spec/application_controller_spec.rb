@@ -1,10 +1,10 @@
 require_relative 'spec_helper'
 
 def app
-  ApplicationController
+  UtilitiesController
 end
 
-describe ApplicationController do
+describe UtilitiesController do
   before :each do
     @data = '{
    "data": [
