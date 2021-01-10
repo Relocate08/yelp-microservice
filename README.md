@@ -24,6 +24,12 @@ Response:
 "message": "Welcome to the Yelp Microservice!"
 }
 ```
+
+### Business ID Requests (Show):
+```
+GET 'businesses/:id'
+```
+
 ### Utility Requests:
 ```
 GET ':location/utilities/electricity'
