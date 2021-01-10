@@ -19,7 +19,7 @@ class ApplicationController < Sinatra::Base
     end
     response = conn.get("/v3/businesses/search?categories=electricitysuppliers&location=#{params[:location]}")
     parsed_json = JSON.parse(response.body, symbolize_names: true)
-    UtilitySerializer.make_json(parsed_json).to_json
+    BusinessSerializer.make_json(parsed_json).to_json
   end
 
   get '/:location/utilities/isps' do
@@ -28,7 +28,7 @@ class ApplicationController < Sinatra::Base
     end
     response = conn.get("/v3/businesses/search?categories=isps&location=#{params[:location]}")
     parsed_json = JSON.parse(response.body, symbolize_names: true)
-    UtilitySerializer.make_json(parsed_json).to_json
+    BusinessSerializer.make_json(parsed_json).to_json
   end
 
   get '/:location/utilities/tv' do
@@ -37,7 +37,7 @@ class ApplicationController < Sinatra::Base
     end
     response = conn.get("/v3/businesses/search?categories=televisionserviceproviders&location=#{params[:location]}")
     parsed_json = JSON.parse(response.body, symbolize_names: true)
-    UtilitySerializer.make_json(parsed_json).to_json
+    BusinessSerializer.make_json(parsed_json).to_json
   end
 
   get '/:location/utilities/water' do
@@ -46,7 +46,7 @@ class ApplicationController < Sinatra::Base
     end
     response = conn.get("/v3/businesses/search?categories=watersuppliers&location=#{params[:location]}")
     parsed_json = JSON.parse(response.body, symbolize_names: true)
-    UtilitySerializer.make_json(parsed_json).to_json
+    BusinessSerializer.make_json(parsed_json).to_json
   end
   #recreation endpoints
   get '/:location/recreation/gyms' do
