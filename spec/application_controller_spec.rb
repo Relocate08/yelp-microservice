@@ -202,13 +202,6 @@ describe ApplicationController do
     location = 80211
     get "/#{location}/homeservices/plumbing"
     expect(last_response).to be_successful
-    found = false
-    data = JSON.parse(last_response.body, symbolize_names: true)
-    data = data[:data]
-    data.each do |biz|
-      found = true if biz[:categories].include?('Plumbing')
-    end
-    expect(found).to eq(true)
   end
 
   it 'can parse a response' do
