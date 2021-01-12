@@ -2,7 +2,7 @@ class BusinessSerializer
 	def self.make_json(data)
 		{
 			'data': data[:businesses].map do |biz|
-				puts biz
+				print biz
 				biz[:categories] = [] unless biz.key? :categories
 				{
 					'id': biz[:id],
