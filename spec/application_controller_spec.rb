@@ -96,6 +96,72 @@ describe ApplicationController do
     expect(last_response).to be_successful
   end
 
+  xit "can hit the utilities/isps endpoint" do
+    location = 80211
+    get "/#{location}/utilities/isps"
+    expect(last_response).to be_successful
+  end
+
+  xit "can hit the utilities/tv endpoint" do
+    location = 80211
+    get "/#{location}/utilities/tv"
+    expect(last_response).to be_successful
+  end
+
+  xit "can hit the utilities/water endpoint" do
+    location = 80211
+    get "/#{location}/utilities/water"
+    expect(last_response).to be_successful
+  end
+
+  xit "can hit the recreation/gyms endpoint" do
+    location = 80211
+    get "/#{location}/recreation/gyms"
+    expect(last_response).to be_successful
+  end
+
+  xit "can hit the recreation/yoga endpoint" do
+    location = 80211
+    get "/#{location}/recreation/yoga"
+    expect(last_response).to be_successful
+  end
+
+  xit "can hit the recreation/parks endpoint" do
+    location = 80211
+    get "/#{location}/recreation/parks"
+    expect(last_response).to be_successful
+  end
+
+  xit "can hit the recreation/hiking endpoint" do
+    location = 80211
+    get "/#{location}/recreation/hiking"
+    expect(last_response).to be_successful
+  end
+
+  xit "can hit the recreation/recreation endpoint" do
+    location = 80211
+    get "/#{location}/recreation/recreation"
+    expect(last_response).to be_successful
+  end
+
+  xit "can hit the recreation/pools endpoint" do
+    location = 80211
+    get "/#{location}/recreation/pools"
+    expect(last_response).to be_successful
+  end
+
+  xit "can hit the recreation/golf endpoint" do
+    location = 80211
+    get "/#{location}/recreation/golf"
+    expect(last_response).to be_successful
+  end
+
+  xit "can hit the recreation/playgrounds endpoint" do
+    location = 80211
+    get "/#{location}/recreation/playgrounds"
+    expect(last_response).to be_successful
+  end
+
   it 'can parse a response' do
     json = JSON.parse(@data, symbolize_names: true)
     expect(json).to have_key(:data)
