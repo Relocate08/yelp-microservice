@@ -4,8 +4,6 @@ class BusinessSerializer
 			# data[:businesses] = [] unless data.key? :businesses
 			if data[:businesses] == nil
 				data[:businesses] = []
-			else
-				data[:businesses]
 			end
 			'data': data[:businesses].map do |biz|
 				{
