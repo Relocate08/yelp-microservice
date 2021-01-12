@@ -1,3 +1,6 @@
 require './config/environment'
 require 'figaro/sinatra'
-run ApplicationController
+
+use ApplicationController
+use YelpService
+run Sinatra::Application

@@ -90,9 +90,117 @@ describe ApplicationController do
   end
 
   # Test is causing issues with Travis - further research necessary
-  xit "can hit the utilities/electricity endpoint" do
+  it "can hit the utilities/electricity endpoint" do
     location = 80211
     get "/#{location}/utilities/electricity"
+    expect(last_response).to be_successful
+  end
+
+  it "can hit the utilities/isps endpoint" do
+    location = 80211
+    get "/#{location}/utilities/isps"
+    expect(last_response).to be_successful
+  end
+
+  it "can hit the utilities/tv endpoint" do
+    location = 80211
+    get "/#{location}/utilities/tv"
+    expect(last_response).to be_successful
+  end
+
+  it "can hit the utilities/water endpoint" do
+    location = 80211
+    get "/#{location}/utilities/water"
+    expect(last_response).to be_successful
+  end
+
+  it "can hit the recreation/gyms endpoint" do
+    location = 80211
+    get "/#{location}/recreation/gyms"
+    expect(last_response).to be_successful
+  end
+
+  it "can hit the recreation/yoga endpoint" do
+    location = 80211
+    get "/#{location}/recreation/yoga"
+    expect(last_response).to be_successful
+  end
+
+  it "can hit the recreation/parks endpoint" do
+    location = 80211
+    get "/#{location}/recreation/parks"
+    expect(last_response).to be_successful
+  end
+
+  it "can hit the recreation/hiking endpoint" do
+    location = 80211
+    get "/#{location}/recreation/hiking"
+    expect(last_response).to be_successful
+  end
+
+  it "can hit the recreation/recreation endpoint" do
+    location = 80211
+    get "/#{location}/recreation/recreation"
+    expect(last_response).to be_successful
+  end
+
+  it "can hit the recreation/pools endpoint" do
+    location = 80211
+    get "/#{location}/recreation/pools"
+    expect(last_response).to be_successful
+  end
+
+  it "can hit the recreation/golf endpoint" do
+    location = 80211
+    get "/#{location}/recreation/golf"
+    expect(last_response).to be_successful
+  end
+
+  it "can hit the recreation/playgrounds endpoint" do
+    location = 80211
+    get "/#{location}/recreation/playgrounds"
+    expect(last_response).to be_successful
+  end
+
+  it "can hit the homeservices/homecleaning endpoint" do
+    location = 80211
+    get "/#{location}/homeservices/homecleaning"
+    expect(last_response).to be_successful
+  end
+
+  it "can hit the homeservices/landscaping endpoint" do
+    location = 80211
+    get "/#{location}/homeservices/landscaping"
+    expect(last_response).to be_successful
+  end
+
+  it "can hit the homeservices/handyman endpoint" do
+    location = 80211
+    get "/#{location}/homeservices/handyman"
+    expect(last_response).to be_successful
+  end
+
+  it "can hit the homeservices/damagerestoration endpoint" do
+    location = 80211
+    get "/#{location}/homeservices/damagerestoration"
+    expect(last_response).to be_successful
+  end
+
+  it "can hit the homeservices/locksmiths endpoint" do
+    location = 80211
+    get "/#{location}/homeservices/locksmiths"
+    expect(last_response).to be_successful
+  end
+
+  it "can hit the homeservices/painters endpoint" do
+    location = 80211
+    get "/#{location}/homeservices/painters"
+    expect(last_response).to be_successful
+  end
+
+  it "can hit the homeservices/plumbing endpoint" do
+    location = 80211
+    get "/#{location}/homeservices/plumbing"
     expect(last_response).to be_successful
   end
 
@@ -107,7 +215,7 @@ describe ApplicationController do
       expect(biz).to have_key(:name)
       expect(biz[:name]).to be_an(String)
       expect(biz).to have_key(:is_closed)
-      expect(biz[:is_closed]).to be_in([true, false])
+      expect(biz[:is_closed]).to be(true).or be(false)
       expect(biz).to have_key(:url)
       expect(biz[:url]).to be_a(String)
       expect(biz).to have_key(:image)
