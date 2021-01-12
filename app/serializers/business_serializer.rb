@@ -1,9 +1,9 @@
 class BusinessSerializer
-	# include FastJsonapi::ObjectSerializer
-	# attributes :name, :is_closed, :image_url, :url, :rating, :review_count, :location, :display_phone, :distance
 	def self.make_json(data)
 		{
 			'data': data[:businesses].map do |biz|
+				puts biz
+				biz[:categories] = [] unless biz.key? :categories
 				{
 					'id': biz[:id],
 					'name': biz[:name],
