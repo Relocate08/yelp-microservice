@@ -90,7 +90,7 @@ describe ApplicationController do
   end
 
   # Test is causing issues with Travis - further research necessary
-  xit "can hit the utilities/electricity endpoint" do
+  it "can hit the utilities/electricity endpoint" do
     location = 80211
     get "/#{location}/utilities/electricity"
     expect(last_response).to be_successful
@@ -162,6 +162,48 @@ describe ApplicationController do
     expect(last_response).to be_successful
   end
 
+  it "can hit the homeservices/homecleaning endpoint" do
+    location = 80211
+    get "/#{location}/homeservices/homecleaning"
+    expect(last_response).to be_successful
+  end
+
+  it "can hit the homeservices/landscaping endpoint" do
+    location = 80211
+    get "/#{location}/homeservices/landscaping"
+    expect(last_response).to be_successful
+  end
+
+  it "can hit the homeservices/handyman endpoint" do
+    location = 80211
+    get "/#{location}/homeservices/handyman"
+    expect(last_response).to be_successful
+  end
+
+  it "can hit the homeservices/damagerestoration endpoint" do
+    location = 80211
+    get "/#{location}/homeservices/damagerestoration"
+    expect(last_response).to be_successful
+  end
+
+  it "can hit the homeservices/locksmiths endpoint" do
+    location = 80211
+    get "/#{location}/homeservices/locksmiths"
+    expect(last_response).to be_successful
+  end
+
+  it "can hit the homeservices/painters endpoint" do
+    location = 80211
+    get "/#{location}/homeservices/painters"
+    expect(last_response).to be_successful
+  end
+
+  it "can hit the homeservices/plumbing endpoint" do
+    location = 80211
+    get "/#{location}/homeservices/plumbing"
+    expect(last_response).to be_successful
+  end
+
   it 'can parse a response' do
     json = JSON.parse(@data, symbolize_names: true)
     expect(json).to have_key(:data)
@@ -173,7 +215,7 @@ describe ApplicationController do
       expect(biz).to have_key(:name)
       expect(biz[:name]).to be_an(String)
       expect(biz).to have_key(:is_closed)
-      expect(biz[:is_closed]).to be_in([true, false])
+      expect(biz[:is_closed]).to be(true).or be(false)
       expect(biz).to have_key(:url)
       expect(biz[:url]).to be_a(String)
       expect(biz).to have_key(:image)
