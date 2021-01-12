@@ -1,5 +1,5 @@
-require './config/environment'
-require 'sinatra'
+# require './config/environment'
+# require 'sinatra'
 require 'json'
 require_relative '../services/yelp_service'
 
@@ -73,6 +73,42 @@ class ApplicationController < Sinatra::Base
 
   get '/:location/recreation/playgrounds' do
     parsed_json = YelpService.fetch_parsed_json('playgrounds', params[:location])
+    BusinessSerializer.make_json(parsed_json).to_json
+  end
+
+  # homeservices endpoint
+  get '/:location/homeservices/homecleaning' do
+    parsed_json = YelpService.fetch_parsed_json('homecleaning', params[:location])
+    BusinessSerializer.make_json(parsed_json).to_json
+  end
+
+  get '/:location/homeservices/landscaping' do
+    parsed_json = YelpService.fetch_parsed_json('landscaping', params[:location])
+    BusinessSerializer.make_json(parsed_json).to_json
+  end
+
+  get '/:location/homeservices/handyman' do
+    parsed_json = YelpService.fetch_parsed_json('handyman', params[:location])
+    BusinessSerializer.make_json(parsed_json).to_json
+  end
+
+  get '/:location/homeservices/damagerestoration' do
+    parsed_json = YelpService.fetch_parsed_json('damagerestoration', params[:location])
+    BusinessSerializer.make_json(parsed_json).to_json
+  end
+
+  get '/:location/homeservices/locksmiths' do
+    parsed_json = YelpService.fetch_parsed_json('locksmiths', params[:location])
+    BusinessSerializer.make_json(parsed_json).to_json
+  end
+
+  get '/:location/homeservices/painters' do
+    parsed_json = YelpService.fetch_parsed_json('painters', params[:location])
+    BusinessSerializer.make_json(parsed_json).to_json
+  end
+
+  get '/:location/homeservices/plumbing' do
+    parsed_json = YelpService.fetch_parsed_json('plumbing', params[:location])
     BusinessSerializer.make_json(parsed_json).to_json
   end
 
