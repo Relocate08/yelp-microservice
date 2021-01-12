@@ -1,9 +1,8 @@
 class BusinessSerializer
 	def self.make_json(data)
 		{
+			data[:businesses] = [] unless data.key? :businesses
 			'data': data[:businesses].map do |biz|
-				p biz
-				biz[:categories] = [] unless biz.key? :categories
 				{
 					'id': biz[:id],
 					'name': biz[:name],
