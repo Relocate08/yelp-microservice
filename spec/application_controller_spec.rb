@@ -373,7 +373,7 @@ describe ApplicationController do
     end
   end
 
-  it 'can return top 5 events' do
+  xit 'can return top 5 events' do
     location = 'newyork'
     get "/#{location}/events"
     expect(last_response).to be_successful
