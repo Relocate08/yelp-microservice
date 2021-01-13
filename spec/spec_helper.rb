@@ -1,4 +1,4 @@
-ENV["SINATRA_ENV"] = "test"
+ENV['SINATRA_ENV'] = 'test'
 
 require_relative '../config/environment'
 require 'rack/test'
@@ -6,7 +6,6 @@ require 'capybara/rspec'
 require 'capybara/dsl'
 require 'simplecov'
 SimpleCov.start
-
 
 RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
