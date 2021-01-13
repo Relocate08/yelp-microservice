@@ -373,6 +373,12 @@ describe ApplicationController do
     end
   end
 
+  it 'can return a single business' do
+    business_id = "FgFmzuS4-cTIHm_IZlUEyw"
+    get "/businesses/#{business_id}"
+    expect(last_response).to be_successful
+  end
+
   it 'can return top 5 events' do
     location = 'newyork'
     get "/#{location}/events"
