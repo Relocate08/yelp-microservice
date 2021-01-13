@@ -35,7 +35,7 @@ class BusinessSerializer
 
 	def self.make_show_json(data)
 		data[:categories] = [] if data[:categories] == nil
-		data[:categories][:location] = [] if data[:categories][:location] == nil
+		data[:location] = [] if data[:location] == nil
 		{
 			'id': data[:id],
 			'name': data[:name],
