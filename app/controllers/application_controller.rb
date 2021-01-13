@@ -107,6 +107,15 @@ class ApplicationController < Sinatra::Base
     BusinessSerializer.make_json(parsed_json).to_json
   end
 
+  get '/businesses/:id' do
+    conn = Faraday.new('https://api.yelp.com') do |f|
+      f.headers['Authorization'] = ENV['YELP_API_KEY']
+    end
+    response = conn.get("/v3/businesses/#{params[:id]}")
+    parsed_json = JSON.parse(response.body, symbolize_names: true)
+    BusinessSerializer.make_show_json(parsed_json).to_json
+  end
+
   get '/:location/events' do
     parsed_json = YelpService.fetch_events(params[:location])
     BusinessSerializer.make_event_json(parsed_json).to_json
