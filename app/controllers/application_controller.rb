@@ -1,5 +1,3 @@
-# require './config/environment'
-# require 'sinatra'
 require 'json'
 require_relative '../services/yelp_service'
 
@@ -13,8 +11,6 @@ class ApplicationController < Sinatra::Base
     JSON.generate(message: "Welcome to the Yelp Microservice!")
   end
 
-
-  # do we want to change this to '/:utility/:location' so that we only need one get request? This would have to pass in the utility they want (e.g. electricity) as well as what needs to be passed to yelp (e.g. electricitysuppliers)
   get '/:location/utilities/electricity' do
     parsed_json = YelpService.fetch_parsed_json('electricitysuppliers', params[:location])
     BusinessSerializer.make_json(parsed_json).to_json
