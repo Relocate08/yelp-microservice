@@ -32,4 +32,23 @@ class BusinessSerializer
 			end
 		}
 	end
+
+	def self.make_event_json(data)
+		data[:events] = [] if data[:events] == nil
+		{
+			'events': data[:events].map do |event|
+				{
+					'id': event[:id],
+					'name': event[:name],
+					'is_free': event[:is_free],
+					'is_canceled': event[:is_canceled],
+					'url': event[:event_site_url],
+					'attending_count': event[:attending_count],
+					'interested_count': event[:interested_count],
+					'location': event[:location][:display_address],
+					'time_start': event[:time_start]
+				}
+			end
+		}
+	end
 end

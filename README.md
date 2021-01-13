@@ -25,11 +25,6 @@ Response:
 }
 ```
 
-### Business ID Requests (Show):
-```
-GET 'businesses/:id'
-```
-
 ### Utility Requests:
 ```
 GET ':location/utilities/electricity'
@@ -83,4 +78,31 @@ Example Response for `GET '80211/utilities/electricity'`
     :state=>"CO"},
   :phone=>"(800) 895-4999",
   :distance=>2708.019879293317}
+```
+
+### Local Events
+```
+GET ':location/events'
+```
+Example Response for `GET '80211/events'`
+```
+{
+    "events": [
+        {
+            "id": "denver-upon-closer-reflection-opening-reception-and-exhibition",
+            "name": "UPON CLOSER REFLECTION Opening Reception and Exhibition",
+            "is_free": true,
+            "is_canceled": false,
+            "url": "https://www.yelp.com/events/denver-upon-closer-reflection-opening-reception-and-exhibition?adjust_creative=hLVXR0MIhyJhliv5ar9z7g&utm_campaign=yelp_api_v3&utm_medium=api_v3_event_search&utm_source=hLVXR0MIhyJhliv5ar9z7g",
+            "attending_count": 1,
+            "interested_count": 0,
+            "location": [
+                "300 W 11th Ave",
+                "Ste A",
+                "Denver, CO 80204"
+            ],
+            "time_start": "2021-01-15T17:00:00-07:00"
+        }
+    ]
+}
 ```
