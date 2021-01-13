@@ -373,7 +373,7 @@ describe ApplicationController do
     end
   end
 
-  it 'can return a single business' do
+  xit 'can return a single business' do
     business_id = "FgFmzuS4-cTIHm_IZlUEyw"
     get "/businesses/#{business_id}"
     expect(last_response).to be_successful
