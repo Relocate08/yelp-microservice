@@ -247,4 +247,10 @@ describe ApplicationController do
       expect(biz[:distance]).to be_a(Float)
     end
   end
+
+  it 'can return top 5 events' do
+    location = 'newyork'
+    get "/#{location}/events"
+    expect(last_response).to be_successful
+  end
 end
