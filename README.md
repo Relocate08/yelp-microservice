@@ -50,6 +50,19 @@ GET ':location/recreation/golf'
 GET ':location/recreation/playgrounds'
 
 ```
+
+### Home Services Requests
+
+```
+GET ':location/homeservices/homecleaning'
+GET ':location/homeservices/landscaping'
+GET ':location/homeservices/handyman'
+GET ':location/homeservices/damagerestoration'
+GET ':location/homeservices/locksmiths'
+GET ':location/homeservices/painters'
+GET ':location/homeservices/plumbing'
+
+```
 Example Response for `GET '80211/utilities/electricity'`
 ```
 {:name=>"Xcel Energy",
