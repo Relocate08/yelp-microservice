@@ -1,3 +1,5 @@
+![](https://img.shields.io/badge/Ruby-2.5.3-orange) ![](https://img.shields.io/badge/Code-HTML-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a) ![](https://travis-ci.com/Relocate08/yelp-microservice.svg?branch=main)
+
 # Relocate Yelp Microservice
 ## Setup
 Development Site: https://relocate-08-yelp-microservice.herokuapp.com/
