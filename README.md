@@ -1,6 +1,12 @@
 ![](https://img.shields.io/badge/Ruby-2.5.3-orange) ![](https://travis-ci.com/Relocate08/yelp-microservice.svg?branch=main)
 
 # Relocate Yelp Microservice
+
+## Table of Contents
+* [Setup]()
+* [Requests]()
+* [Authors]()
+
 ## Setup
 Development Site: https://relocate-08-yelp-microservice.herokuapp.com/
 If you have not cloned down the front-end or back-end repos, you can find front-end [here](https://github.com/Relocate08/Relocate08-Front-End-Rails) and back-end [here](https://github.com/Relocate08/Relocate-Back-End-Rails)  
@@ -119,7 +125,7 @@ Example Response for `GET '80211/events'`
 }
 ```
 
-### Authors
+## Authors
   - **Christopher Allbritton** - *Turing Student* - [GitHub Profile](https://github.com/Callbritton) - [Turing Alum Profile](https://alumni.turing.io/alumni/christopher-allbritton) - [LinkedIn](https://www.linkedin.com/in/christopher-allbritton)
   - **Dani Coleman** - *Turing Student* - [GitHub Profile](https://github.com/dcoleman21) - [Turing Alum Profile](https://alumni.turing.io/alumni/dani-coleman) - [LinkedIn](https://www.linkedin.com/in/dcoleman-21/)
   - **Kevin Cuadros** - *Turing Student* - [GitHub Profile](https://github.com/kevxo) - [Turing Alum Profile](https://alumni.turing.io/alumni/kevin-david-cuadros) - [LinkedIn](https://www.linkedin.com/in/kevin-cuadros-2bb4551a1/)
