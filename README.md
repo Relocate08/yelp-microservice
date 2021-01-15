@@ -3,9 +3,9 @@
 # Relocate Yelp Microservice
 
 ## Table of Contents
-* [Setup]()
-* [Requests]()
-* [Authors]()
+* [Setup](https://github.com/Relocate08/yelp-microservice/blob/main/README.md#setup)
+* [Requests](https://github.com/Relocate08/yelp-microservice/blob/main/README.md#requests)
+* [Authors](https://github.com/Relocate08/yelp-microservice/blob/main/README.md#authors)
 
 ## Setup
 Development Site: https://relocate-08-yelp-microservice.herokuapp.com/
